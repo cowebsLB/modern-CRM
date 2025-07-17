@@ -1,0 +1,71 @@
+{
+  "name": "Modern CRM",
+  "short_name": "CRM",
+  "description": "A modern, offline-first CRM system for managing clients, projects, and invoices",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%231e40af'/%3E%3Cstop offset='100%25' style='stop-color:%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='192' height='192' fill='url(%23grad)' rx='20'/%3E%3Cpath d='M48 64h96v8H48zm0 16h96v8H48zm0 16h64v8H48z' fill='white' opacity='0.9'/%3E%3Cpath d='M48 112h96c4.4 0 8 3.6 8 8v32c0 4.4-3.6 8-8 8H48c-4.4 0-8-3.6-8-8v-32c0-4.4 3.6-8 8-8z' fill='white' opacity='0.2'/%3E%3Cpath d='M56 120h32v8H56zm0 16h48v8H56z' fill='white' opacity='0.9'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%231e40af'/%3E%3Cstop offset='100%25' style='stop-color:%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' fill='url(%23grad)' rx='50'/%3E%3Cpath d='M128 160h256v24H128zm0 48h256v24H128zm0 48h192v24H128z' fill='white' opacity='0.9'/%3E%3Cpath d='M128 304h256c12 0 24 12 24 24v80c0 12-12 24-24 24H128c-12 0-24-12-24-24v-80c0-12 12-24 24-24z' fill='white' opacity='0.2'/%3E%3Cpath d='M152 328h96v24h-96zm0 48h144v24H152z' fill='white' opacity='0.9'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect width='1280' height='720' fill='%230f172a'/%3E%3Ctext x='640' y='360' text-anchor='middle' fill='white' font-size='48' font-family='Arial'%3EModern CRM Dashboard%3C/text%3E%3C/svg%3E",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "CRM Dashboard"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 390 844'%3E%3Crect width='390' height='844' fill='%230f172a'/%3E%3Ctext x='195' y='422' text-anchor='middle' fill='white' font-size='24' font-family='Arial'%3EMobile CRM%3C/text%3E%3C/svg%3E",
+      "sizes": "390x844",
+      "type": "image/svg+xml",
+      "form_factor": "narrow",
+      "label": "Mobile View"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add Client",
+      "short_name": "New Client",
+      "description": "Create a new client",
+      "url": "/?action=add-client",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231e40af' viewBox='0 0 24 24'%3E%3Cpath d='M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V8c0-.55-.45-1-1-1s-1 .45-1 1v2H2c-.55 0-1 .45-1 1s.45 1 1 1h2v2c0 .55.45 1 1 1s1-.45 1-1v-2h2c.55 0 1-.45 1-1s-.45-1-1-1H6z'/%3E%3C/svg%3E",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "New Invoice",
+      "short_name": "Invoice",
+      "description": "Create a new invoice",
+      "url": "/?action=add-invoice",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%231e40af' viewBox='0 0 24 24'%3E%3Cpath d='M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z'/%3E%3C/svg%3E",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "dir": "ltr",
+  "lang": "en-US",
+  "scope": "/",
+  "id": "modern-crm-app"
+}

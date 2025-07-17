@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>CowebsLB CRM - Modern Business Management</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Modern, offline-first CRM for managing clients, projects, and invoices">
+    <meta name="theme-color" content="#1e40af">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cowebs-blue': '#1e40af',
+                        'cowebs-dark': '#0f172a',
+                        'cowebs-light': '#f8fafc'
+                    },
+                    animation: {
+                        'slide-up': 'slideUp 0.3s ease-out',
+                        'fade-in': 'fadeIn 0.2s ease-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'bounce-subtle': 'bounceSubtle 2s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-cowebs-dark via-slate-900 to-cowebs-blue min-h-screen font-inter text-white overflow-x-hidden">
+    
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="fixed inset-0 bg-cowebs-dark z-50 flex items-center justify-center">
+        <div class="relative">
+            <div class="w-16 h-16 border-4 border-cowebs-blue border-t-transparent rounded-full animate-spin"></div>
+            <div class="absolute inset-0 w-16 h-16 border-4 border-blue-400 border-t-transparent rounded-full animate-spin animate-pulse-slow opacity-60"></div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
+
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar" class="fixed left-0 top-0 h-full w-64 bg-black bg-opacity-20 backdrop-blur-xl border-r border-white border-opacity-10 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-30">
+        <div class="p-6">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="w-10 h-10 bg-gradient-to-r from-cowebs-blue to-blue-400 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-chart-line text-white text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold">CowebsLB</h1>
+                    <p class="text-xs text-gray-400">CRM</p>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="space-y-2">
+                <li>
+                    <a href="#dashboard" class="nav-link active flex items-center space-x-3 p-3 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-200" data-page="dashboard">
+                        <i class="fas fa-home w-5"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#analytics" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-200" data-page="analytics">
+                        <i class="fas fa-chart-bar w-5"></i>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#clients" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-200" data-page="clients">
+                        <i class="fas fa-users w-5"></i>
+                        <span>Clients</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-200" data-page="projects">
+                        <i class="fas fa-project-diagram w-5"></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#invoices" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-200" data-page="invoices">
+                        <i class="fas fa-file-invoice-dollar w-5"></i>
+                        <span>Invoices</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tasks" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-200" data-page="tasks">
+                        <i class="fas fa-tasks w-5"></i>
+                        <span>Tasks</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#calendar" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-200" data-page="calendar">
+                        <i class="fas fa-calendar-alt w-5"></i>
+                        <span>Calendar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#notifications" class="nav-link flex items-center space-x-3 p-3 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-200" data-page="notifications">
+                        <i class="fas fa-bell w-5"></i>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Theme Toggle -->
+            <div class="mt-8 pt-8 border-t border-white border-opacity-10">
+                <button id="theme-toggle" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-white hover:bg-opacity-10 transition-all duration-200 w-full">
+                    <i class="fas fa-moon w-5"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="lg:ml-64 min-h-screen">
+        <!-- Header -->
+        <header class="bg-black bg-opacity-20 backdrop-blur-xl border-b border-white border-opacity-10 p-4 lg:p-6">
+            <div class="flex items-center justify-between">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-white hover:bg-opacity-10" title="Open menu" aria-label="Open navigation menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+
+                <!-- Page Title -->
+                <h2 id="page-title" class="text-2xl font-bold">Dashboard</h2>
+
+                <!-- Quick Actions -->
+                <div class="flex items-center space-x-3">
+                    <!-- Notifications -->
+                    <div class="relative">
+                        <button onclick="app.showNotifications()" class="p-2 rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200 relative">
+                            <i class="fas fa-bell text-xl"></i>
+                            <span id="notification-badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5 min-w-[1.25rem] text-center hidden">0</span>
+                        </button>
+                    </div>
+                    
+                    <button id="quick-add-btn" class="bg-cowebs-blue hover:bg-blue-600 px-4 py-2 rounded-lg transition-colors duration-200 flex items-center space-x-2">
+                        <i class="fas fa-plus"></i>
+                        <span class="hidden sm:inline">Quick Add</span>
+                    </button>
+                    <button id="search-btn" class="p-2 rounded-lg hover:bg-white hover:bg-opacity-10" title="Search" aria-label="Open search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <div id="page-content" class="p-4 lg:p-6">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+    </main>
+
+    <!-- Modal Container -->
+    <div id="modal-container"></div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="fixed bottom-4 right-4 z-50 space-y-2"></div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js?v=2025071702"></script>
+    <script src="js/storage.js?v=2025071702"></script>
+    <script src="js/ui.js?v=2025071702"></script>
+    <script src="js/clients.js?v=2025071702"></script>
+    <script src="js/projects.js?v=2025071702"></script>
+    <script src="js/invoices.js?v=2025071702"></script>
+    <script src="js/tasks.js?v=2025071702"></script>
+    <script src="js/analytics.js?v=2025071702"></script>
+    <script src="js/calendar.js?v=2025071702"></script>
+    <script src="js/notifications.js?v=2025071702"></script>
+    <script src="js/main.js?v=2025071702"></script>
+</body>
+</html>
